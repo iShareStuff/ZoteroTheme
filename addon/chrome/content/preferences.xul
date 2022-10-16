@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE window SYSTEM "chrome://__addonRef__/locale/overlay.dtd">
+
+<overlay id="__addonRef__-preferences" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" xmlns:html="http://www.w3.org/1999/xhtml">
+  <prefwindow id="zotero-prefs">
+    <prefpane id="zotero-prefpane-__addonRef__" insertafter="zotero-prefpane-advanced" label="Theme" image="chrome://__addonRef__/skin/favicon.png" onpaneload="Zotero.ZoteroTheme.prefs.initPreferences(window)">
+      <preferences id="zotero-preferences-__addonRef__">
+        <preference id="pref-__addonRef__-currentTheme" name="extensions.zotero.ZoteroTheme.currentTheme" type="string" />
+        <preference id="pref-__addonRef__-themes" name="extensions.zotero.ZoteroTheme.themes" type="string" />
+      </preferences>
+      <tabbox>
+        <tabs>
+          <tab label="&zotero.__addonRef__.pref.themeeditor.label;" />
+          <tab label="&zotero.__addonRef__.pref.advanced.label;" />
+        </tabs>
+        <tabpanels id="zotero-prefpane-__addonRef__" orient="vertical">
+          <tabpanel id="zotero-prefpane-__addonRef__-themeeditor" orient="vertical">
+            <rows>
+              <row>
+                <label value="&zotero.__addonRef__.pref.themeeditor.theme.label;" />
+                <menulist id="zotero-prefpane-__addonRef__-themeeditor-themesmenulist">
+                  <!-- Insert Here -->
+                </menulist>
+                <button id="zotero-prefpane-__addonRef__-themeeditor-create" label="+" tooltiptext="Create Theme" style="width: 30px; maxWidth: 30px; minWidth: 30px" onclick="Zotero.ZoteroTheme.prefs.createTheme();"></button>
+                <button id="zotero-prefpane-__addonRef__-themeeditor-delete" label="-" tooltiptext="Delete Theme" style="width: 30px; maxWidth: 30px; minWidth: 30px" onclick="Zotero.ZoteroTheme.prefs.deleteTheme();"></button>
+                <button id="zotero-prefpane-__addonRef__-themeeditor-reset" label="↻" tooltiptext="Reset Theme" style="width: 30px; maxWidth: 30px; minWidth: 30px" onclick="Zotero.ZoteroTheme.prefs.resetTheme();"></button>
+                <button id="zotero-prefpane-__addonRef__-themeeditor-apply" label="Apply" tooltiptext="Apply Theme" style="width: 30px; maxWidth: 30px; minWidth: 30px" onclick="Zotero.ZoteroTheme.prefs.applyTheme();"></button>
+              </row>
+              <row>
+                <columns>
+                  <column flex="1">
+                    <groupbox flex="1">
+                      <caption label="&zotero.__addonRef__.pref.themeeditor.styles.label;" />
+                      <rows id="zotero-prefpane-__addonRef__-themeeditor-rows">
+                        <!-- Insert Here -->
+                      </rows>
+                      <html:input id="zotero-prefpane-__addonRef__-themeeditor-colorpicker" type="color" hidden="true" />
+                    </groupbox>
+                  </column>
+                  <column>
+                    <groupbox flex="1">
+                      <caption label="&zotero.__addonRef__.pref.themeeditor.preview.label;" />
+                      <rows>
+                        <row>
+                          <textbox id="zotero-prefpane-__addonRef__-themeeditor-preview" value="The quick brown fox jumps over a lazy dog" width="200" height="100" multiline="true" />
+                        </row>
+                      </rows>
+                    </groupbox>
+                  </column>
+                </columns>
+              </row>
+            </rows>
+
+          </tabpanel>
+          <tabpanel id="zotero-prefpane-__addonRef__-advanced" orient="vertical">
+            <groupbox>
+              <caption label="&zotero.__addonRef__.help.feedback.caption.label;" />
+              <hbox style="display: block">
+                <label value="&zotero.__addonRef__.help.feedback.label;" class="zotero-text-link" href="__homepage__" />
+              </hbox>
+            </groupbox>
+            <label value="&zotero.__addonRef__.help.version.label;" />
+            <label value="&zotero.__addonRef__.help.releasetime.label;" />
+          </tabpanel>
+        </tabpanels>
+      </tabbox>
+    </prefpane>
+  </prefwindow>
+</overlay>
